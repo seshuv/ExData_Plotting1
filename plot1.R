@@ -12,5 +12,5 @@ rm(powerConsumptionData)
 #plot 1
 hist(data$Global_active_power, col= "red", xlab = "Global Active Power (kilowatts)")
 
-#plot 2
-#plot(data$Global_active_power, data$Datetime, type="l",ylab="Global Active Power (kilowatts)", xlab="")
+dev.copy(png,'plot1.png')
+dev.off()
