@@ -12,10 +12,10 @@ data$DateTime <- as.POSIXct(datetime)
 rm(powerConsumptionData)
 
 #plot 4 combines 4 plots 
-par(mfrow = c(2, 2), oma = c(0,0,2,0))
+par(mfrow = c(2, 2), oma = c(0,0,2,0), mar = c(4,4,2,2))
 
 # plot2 (upper-left)
-plot(data$Global_active_power~data$DateTime, xlab="",ylab="Global Active Power (kilowatts)", type="l")
+plot(data$Global_active_power~data$DateTime, xlab="",ylab="Global Active Power", type="l")
 
 # upper-right
 plot(data$Voltage~data$DateTime, xlab="datetime", ylab = "Voltage", type="l")
