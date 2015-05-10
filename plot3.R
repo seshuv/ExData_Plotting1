@@ -11,13 +11,11 @@ datetime <- paste(as.Date(data$Date), data$Time)
 data$DateTime <- as.POSIXct(datetime)
 rm(powerConsumptionData)
 
-#plot 2
-plot(data$Global_active_power~data$DateTime, xlab="",ylab="Global Active Power (kilowatts)", type="l")
-
+#plot 3
 with(data, { plot (data$Sub_metering_1~data$DateTime,xlab="", ylab= "Energy Sub Meeting", type="l")
              lines(Sub_metering_2~DateTime,col='Red')
              lines(Sub_metering_3~DateTime,col='Blue')})
-legend("topright", col=c("black", "red", "blue"), legend=c("Sub_meeting_1", "Sub_meeting_2", "Sub_meeting_3"))
+legend("topright", col=c("black", "red", "blue"), legend=c("Sub_meeting_1", "Sub_meeting_2", "Sub_meeting_3"), lty=1, lwd=2)
 
-dev.copy(png,'plot3.png')
+dev.copy(png,'plot3.png', height=480, width=480)
 dev.off()

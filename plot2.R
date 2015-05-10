@@ -13,5 +13,5 @@ rm(powerConsumptionData)
 #plot 2
 plot(data$Global_active_power~data$DateTime, xlab="",ylab="Global Active Power (kilowatts)", type="l")
 
-dev.copy(png,'plot2.png')
+dev.copy(png,'plot2.png', height=480, width=480)
 dev.off()
