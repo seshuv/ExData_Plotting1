@@ -24,11 +24,12 @@ plot(data$Voltage~data$DateTime, xlab="datetime", ylab = "Voltage", type="l")
 with(data, { plot (data$Sub_metering_1~data$DateTime,xlab="", ylab= "Energy Sub Meeting", type="l")
              lines(Sub_metering_2~DateTime,col='Red')
              lines(Sub_metering_3~DateTime,col='Blue')})
-legend("topright", col=c("black", "red", "blue"), legend=c("Sub_meeting_1", "Sub_meeting_2", "Sub_meeting_3"),  bty = "n",
-       cex=0.5, pt.cex = 1, pch = 1)
+legend("topright", col=c("black", "red", "blue"), legend=c("Sub_meeting_1", "Sub_meeting_2", "Sub_meeting_3"),  
+       bty = "n", lty=1, lwd=2, cex=0.5, pt.cex=1)
+#       cex=0.5, pt.cex = 1, pch = 1)
 
 # lower-right
 plot(data$Global_reactive_power~data$DateTime, xlab="datetime", ylab="Global_reactive_power", type="l")
 
-dev.copy(png,'plot4.png')
+dev.copy(png,'plot4.png', height=480, width=480)
 dev.off()
